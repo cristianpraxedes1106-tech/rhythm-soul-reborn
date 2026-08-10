@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rhythm Soul — Reborn</title>
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div id="app">
+<header><div class="logo">RHYTHM <b>SOUL</b></div><div id="audioState">AUDIO: READY ♫</div></header>
+<main id="screen-menu" class="screen active">
+  <div class="hero"><p class="eyebrow">THE RHYTHM OF YOUR SOUL</p><h1>RHYTHM<br><span>SOUL</span></h1><p class="sub">Beat the rhythm. Survive the soul.</p></div>
+  <div class="menu"><button id="play">▶ PLAY</button><button id="bossSelect">◆ BOSS SELECT</button><button id="practice">○ PRACTICE</button><button id="settings">⚙ SETTINGS</button></div>
+</main>
+<main id="screen-boss" class="screen">
+ <div class="topline"><div><p class="eyebrow">SELECT YOUR OPPONENT</p><h2>BOSS SELECT</h2></div><button class="small" data-menu>← MENU</button></div>
+ <div class="bossLayout"><div id="bossGrid"></div><section id="bossInfo"></section></div>
+</main>
+<main id="screen-settings" class="screen"><div class="topline"><div><p class="eyebrow">TUNE THE EXPERIENCE</p><h2>SETTINGS</h2></div><button class="small" data-menu>← MENU</button></div><section class="panel"><label>MASTER VOLUME <output id="volOut">70%</output><input id="volume" type="range" min="0" max="100" value="70"></label><label>HIT WINDOW <output id="windowOut">NORMAL</output><input id="hitWindow" type="range" min="0" max="2" value="1"></label><p class="hint">O jogo usa D F J K ou ← ↓ ↑ → para ritmo. WASD/setas controlam a alma.</p><button id="reset" class="danger">RESET PROGRESS</button></section></main>
+<main id="screen-rhythm" class="screen"><div class="battleTop"><button class="small" id="quitRhythm">← MENU</button><div><b id="rhythmBoss">LUMEN WRAITH</b><span id="rhythmPhase">RHYTHM PHASE</span></div><div id="score">000000</div></div><div class="ready" id="ready">GET READY</div><div class="rhythmArea"><div class="bossName" id="rhythmTitle">LUMEN WRAITH</div><div class="lanes" id="lanes"><div class="lane"><i>←</i><span>D</span></div><div class="lane"><i>↓</i><span>F</span></div><div class="lane"><i>↑</i><span>J</span></div><div class="lane"><i>→</i><span>K</span></div></div><div class="judgement" id="judgement">READY</div><div class="combo" id="combo">COMBO 0</div></div></main>
+<main id="screen-soul" class="screen"><div class="battleTop"><button class="small" id="quitSoul">← MENU</button><div><b id="soulBoss">LUMEN WRAITH</b><span>SOUL BATTLE</span></div><div id="soulScore">000000</div></div><div class="hud"><div><small>YOU</small><div class="bar"><i id="playerHp"></i></div></div><div><small id="bossHpText">BOSS</small><div class="bar boss"><i id="bossHp"></i></div></div></div><canvas id="arena" width="900" height="520"></canvas><p class="controls">MOVE: WASD / ARROWS · SURVIVE THE PATTERN</p></main>
+<main id="screen-result" class="screen"><section class="result panel"><p class="eyebrow" id="resultEyebrow">BATTLE COMPLETE</p><h2 id="resultTitle">VICTORY</h2><div id="resultRank">S</div><p id="resultStats"></p><button id="retry">↻ RETRY</button><button data-menu>← MENU</button></section></main>
+</div><script src="game.js?v=1"></script>
+</body></html>
